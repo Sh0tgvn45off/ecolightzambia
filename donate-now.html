@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donate Now - EcoLight Innovations</title>
+    <!-- Favicon - Tab Icon -->
+    <link rel="icon" type="image/png" sizes="96x96" href="ecolight_logo-removebg-preview.png">
+    <link rel="icon" type="image/png" sizes="64x64" href="ecolight_logo-removebg-preview.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="ecolight_logo-removebg-preview.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="ecolight_logo-removebg-preview.png">
+    <link rel="shortcut icon" href="ecolight_logo-removebg-preview.png">
+    <link rel="apple-touch-icon" sizes="192x192" href="ecolight_logo-removebg-preview.png">
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Background Slideshow -->
+    <div class="background-slideshow">
+        <div class="slide active" style="background-image: url('background_data/_kids_borehole.png');"></div>
+        <div class="slide" style="background-image: url('background_data/installing_solar_panels_.png');"></div>
+        <div class="slide" style="background-image: url('background_data/solar_down_use.jpg');"></div>
+    </div>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <!-- Logo Section -->
+            <div class="logo-section">
+               <a href="index.html"><img src="ecolight_logo-removebg-preview.png" alt="EcoLight Innovations Logo" class="logo"></a>
+                <div class="brand-text">
+                    <span class="brand-line-1">
+                        <span class="eco">ECO</span><span class="light">LIGHT</span>
+                    </span>
+                    <span class="brand-line-2">
+                        <span class="innovations">INNOVATIONS</span>
+                    </span>
+                </div>
+            </div>
+            
+            <!-- Navigation Links -->
+            <ul class="nav-links">
+                <li class="dropdown">
+                    <a href="about-us.html" class="nav-button">ABOUT US</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="about-us.html#about-ecolight">About EcoLight</a></li>
+                        <li><a href="about-us.html#our-team">Our Team</a></li>
+                        <li><a href="about-us.html#our-board">Our Board</a></li>
+                    </ul>
+                </li>
+                <li><a href="our-mission.html" class="nav-button">OUR MISSION</a></li>
+                <li><a href="impact-stories.html" class="nav-button">IMPACT STORIES</a></li>
+                <li><a href="contact-us.html" class="nav-button">CONTACT US</a></li>
+                <li><a href="donate.html" class="nav-button donate-button">DONATE</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <section class="page-header-section">
+            <h1 class="page-title">MAKE A DONATION</h1>
+            <p class="page-description">Choose your preferred payment method to support our mission.</p>
+        </section>
+
+        <section class="content-section payment-choice-section">
+            <h2 class="section-title">Select Payment Method</h2>
+            <div class="payment-options-grid">
+                <!-- African Mobile Money Option -->
+                <div class="payment-choice-card" onclick="openMobileMoneyModal()">
+                    <div class="payment-icon">
+                        <img src="Icons_data/mobile-moneysim-card.png" alt="Mobile Money">
+                    </div>
+                    <h3>African Mobile Money</h3>
+                    <p>Pay using M-PESA, Airtel Money, or PawaPay</p>
+                    <p class="region-tag">Within Africa</p>
+                </div>
+
+                <!-- PayPal Option -->
+                <div class="payment-choice-card" onclick="openPayPalModal()">
+                    <div class="payment-icon">
+                        <img src="Icons_data/paypal.png" alt="PayPal">
+                    </div>
+                    <h3>PayPal / Card Payment</h3>
+                    <p>International payments via PayPal or Credit/Debit Card</p>
+                    <p class="region-tag">International</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Mobile Money Modal -->
+    <div id="mobileMoneyModal" class="payment-modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeMobileMoneyModal()">&times;</span>
+            <h2>African Mobile Money Payment</h2>
+            <p class="modal-description">Select your preferred mobile money provider:</p>
+            
+            <div class="mobile-money-providers">
+                <!-- M-PESA -->
+                <div class="provider-card" onclick="initiateMpesaPayment()">
+                    <img src="Icons_data/mpesa1.png" alt="M-PESA">
+                    <h3>M-PESA</h3>
+                    <p>Pay via M-PESA</p>
+                </div>
+
+                <!-- Airtel Money -->
+                <div class="provider-card" onclick="initiateAirtelPayment()">
+                    <img src="Icons_data/airtel money1.png" alt="Airtel Money">
+                    <h3>Airtel Money</h3>
+                    <p>Pay via Airtel Money</p>
+                </div>
+
+                <!-- PawaPay -->
+                <div class="provider-card" onclick="initiatePawaPayPayment()">
+                    <img src="Icons_data/pawapay1.png" alt="PawaPay">
+                    <h3>PawaPay</h3>
+                    <p>Pay via PawaPay</p>
+                </div>
+            </div>
+
+            <div class="payment-instructions">
+                <h3>Payment Number:</h3>
+                <div class="payment-number">+260 97 3032559</div>
+                <p class="instruction-text">After selecting your provider, you'll be prompted to authorize the payment through your mobile money app.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- PayPal Modal -->
+    <div id="paypalModal" class="payment-modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closePayPalModal()">&times;</span>
+            <h2>PayPal / Card Payment</h2>
+            <p class="modal-description">Choose how you'd like to proceed:</p>
+            
+            <div class="paypal-options">
+                <button class="paypal-choice-btn" onclick="proceedWithPayPal()">
+                    <img src="Icons_data/paypal app pay.png" alt="PayPal" class="btn-icon">
+                    <div>
+                        <h3>Pay with PayPal Account</h3>
+                        <p>Send payment to: <strong>ecolight.zm@gmail.com</strong></p>
+                    </div>
+                </button>
+
+                <button class="paypal-choice-btn" onclick="proceedWithCard()">
+                    <img src="Icons_data/card paymet visa.png" alt="Card Payment" class="btn-icon">
+                    <div>
+                        <h3>Pay with Credit/Debit Card</h3>
+                        <p>Process payment through PayPal's secure gateway</p>
+                    </div>
+                </button>
+            </div>
+
+            <div class="payment-instructions">
+                <p class="instruction-text"><strong>Note:</strong> You'll be redirected to PayPal's secure payment page to complete your donation.</p>
+            </div>
+        </div>
+    </div>
+
+     <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+              <a href="index.html"><img src="ecolight_logo-removebg-preview.png" alt="EcoLight Innovations Logo" class="footer-logo"></a>
+                <div class="brand-text">
+                    <span class="brand-line-1">
+                        <span class="eco">ECO</span><span class="light">LIGHT</span>
+                    </span>
+                    <span class="brand-line-2">
+                        <span class="innovations">INNOVATIONS</span>
+                    </span>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="about-us.html">About Us</a></li>
+                    <li><a href="our-mission.html">Our Mission</a></li>
+                    <li><a href="impact-stories.html">Impact Stories</a></li>
+                    <li><a href="contact-us.html">Contact Us</a></li>
+                    <li><a href="donate.html">Donate</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h3>Contact Us</h3>
+                <p>Email: <a href="mailto:ecolight.zm@gmail.com">ecolight.zm@gmail.com</a></p>
+                <p>Phone: <a href="https://wa.me/+260973032559/">+260 97 3032559</a></p>
+                <p>Address: Chilumba, Central Province, Zambia</p>
+            </div>
+            <div class="footer-social">
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/profile.php?id=61561046755563" aria-label="Facebook"><img src="Content_media/facebook png.png" alt="Facebook"></a>
+                    <a href="https://www.linkedin.com/company/108702222/" aria-label="LinkedIn"><img src="Content_media/linkedin png.png" alt="LinkedIn"></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 EcoLight Innovations Zambia. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="donate-now.js"></script>
+</body>
+</html>
